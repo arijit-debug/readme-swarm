@@ -56,7 +56,7 @@ It is **pure animated SVG**. No JavaScript, no browser extension, nothing for th
 | key | what it is |
 | --- | --- |
 | `cursors` | Names and colours for the swarm, in the order they are handed jobs |
-| `portrait` | Optional ASCII art file (`ascii`), window title and a typed `whoami` line. It floats left at `layout.portraitWidth` (default `54%`) |
+| `portrait` | Optional ASCII art file (`ascii`), window title and a typed `whoami` line; `"divider": false` drops the glowing line beside the window. It floats left at `layout.portraitWidth` (default `54%`) |
 | `profile` | Avatar card: `avatar` (an 8-bit RGB/RGBA PNG), `name`, `handle`, `role`. The avatar resolves from coarse pixel blocks to full detail under a scan line |
 | `about` | A card with a typed title and bullet lines |
 | `projects` | A heading plus one clickable row per project (`icon`: `music`, `film`, `pen`, `code` or `spark`; `name`, `desc`, `href`, or `tag` for private work) |
