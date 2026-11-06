@@ -17,7 +17,10 @@ export function portrait(cfg, cursors, t0 = 0.15) {
   const Y0 = 58;
   const W = 844;
   const H = Math.round(Y0 + lines.length * LH + 62);
-  const s = new Scene({ id: 'p', w: 940, h: H, ui: 2.1 });
+  // the glowing divider right of the window is optional; without it the
+  // image ends at the window's edge
+  const divider = cfg.divider !== false;
+  const s = new Scene({ id: 'p', w: divider ? 940 : W, h: H, ui: 2.1 });
   const [lead, ...sweepers] = cursors;
 
   s.def(
@@ -116,7 +119,7 @@ export function portrait(cfg, cursors, t0 = 0.15) {
       [who.end + 0.05, 'opacity:1;transform:translateY(-120px)'],
       [who.end + 7, `opacity:1;transform:translateY(${H + 120}px)`],
     ], ';animation-iteration-count:infinite')}"/></g>` +
-      `<rect x="890" y="82" width="4" height="${H - 165}" rx="2" fill="url(#p-dv)" style="transform-box:fill-box;transform-origin:top;${s.appear(t0 + 0.2, 0.8, 'scaleY(0)')}"/>`,
+      (divider ? `<rect x="890" y="82" width="4" height="${H - 165}" rx="2" fill="url(#p-dv)" style="transform-box:fill-box;transform-origin:top;${s.appear(t0 + 0.2, 0.8, 'scaleY(0)')}"/>` : ''),
   );
   return { scene: s, end: who.end, alt: cfg.alt };
 }
