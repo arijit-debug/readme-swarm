@@ -1,0 +1,5 @@
+node_modules/
+examples/assets/
+examples/README.md
+examples/preview.html
+*.mp4

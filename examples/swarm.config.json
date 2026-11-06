@@ -1,0 +1,42 @@
+{
+  "user": "your-github-username",
+  "readme": "README.md",
+  "out": "assets/swarm",
+  "layout": { "columnWidth": "60%" },
+  "cursors": {
+    "Claude": "#d97757",
+    "Gemini": "#4285f4",
+    "Java": "#e76f00",
+    "Premiere": "#7f7fff",
+    "Figma": "#a259ff"
+  },
+  "about": {
+    "file": "about.md",
+    "title": "Hi, I build things.",
+    "lines": [
+      "Small tools for problems I actually have.",
+      "Currently learning full-stack web, one project at a time."
+    ]
+  },
+  "projects": {
+    "title": "Currently building",
+    "items": [
+      { "icon": "🧪", "name": "my-project", "desc": "One line on what it does and who it is for", "href": "https://github.com/your-github-username/my-project" },
+      { "icon": "🔒", "name": "secret-project", "desc": "Private repos show a tag instead of a link", "tag": "in progress" }
+    ]
+  },
+  "toolkit": {
+    "title": "Toolkit",
+    "items": ["JavaScript", "Node", "Git & GitHub", "Figma"]
+  },
+  "timeline": {
+    "title": "timeline / what I shipped lately",
+    "footer": "rebuilt daily by readme-swarm",
+    "max": 6,
+    "exclude": ["your-github-username"],
+    "fallback": [
+      { "repo": "my-project", "message": "First commit" },
+      { "repo": "my-project", "message": "Add the README" }
+    ]
+  }
+}

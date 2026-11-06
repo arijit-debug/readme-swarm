@@ -1,0 +1,16 @@
+{
+  "name": "readme-swarm",
+  "version": "1.0.0",
+  "description": "A swarm of named cursors builds your GitHub profile README on every visit. Pure animated SVG: no JavaScript, no extension.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Arijit Naskar (https://github.com/arijit-debug)",
+  "bin": { "readme-swarm": "src/cli.mjs" },
+  "scripts": {
+    "build": "node src/cli.mjs --config examples/swarm.config.json --offline",
+    "preview": "node src/preview.mjs --config examples/swarm.config.json",
+    "record": "node src/record.mjs --page examples/preview.html --out examples/build.mp4"
+  },
+  "engines": { "node": ">=20" },
+  "keywords": ["github", "profile", "readme", "svg", "animation", "github-action"]
+}

@@ -1,0 +1,21 @@
+name: readme-swarm
+description: Rebuild an animated, self-building profile README from swarm.config.json and your latest commits.
+author: arijit-debug
+branding:
+  icon: mouse-pointer
+  color: green
+inputs:
+  config:
+    description: Path to swarm.config.json
+    default: swarm.config.json
+  token:
+    description: Token used to read your public commits (only raises the rate limit)
+    default: ${{ github.token }}
+runs:
+  using: composite
+  steps:
+    - name: Render SVGs and README
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: node "${{ github.action_path }}/src/cli.mjs" --config "${{ inputs.config }}"
