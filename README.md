@@ -61,10 +61,11 @@ It is **pure animated SVG**. No JavaScript, no browser extension, nothing for th
 | `about` | A card with a typed title and bullet lines |
 | `projects` | A heading plus one clickable row per project (`icon`: `music`, `film`, `pen`, `code` or `spark`; `name`, `desc`, `href`, or `tag` for private work) |
 | `toolkit` | Chips that drop in one by one, as a full-width strip (`"wide": false` keeps it in the column) |
+| `layout.table` | `true` puts the portrait and the column in a two-cell table, the only layout that stays side by side in the GitHub mobile app (GitHub draws a thin border around the cells) |
 | `layout.style` | `"markdown"` renders the column like plain GitHub markdown (headings, bullets, `code` chips) in light and dark variants that follow the visitor's theme; leave it out for dark cards |
 | `layout.inertHref` | Where images without a link point (default `#swarm`, which does nothing). Without it GitHub links every image to its raw file |
 | `layout.stagger` | Seconds between the start of one block and the next (default `0.12`). Every block builds at the same time |
-| `timeline` | The editor strip: `max` commits, `repos` to include, `exclude` to skip, `fallback` for offline builds |
+| `timeline` | The editor strip: `max` commits, taken evenly from every repo pushed in the last `days` (default 45; `perRepo` overrides the share), `repos` to include, `exclude` to skip, `fallback` for offline builds |
 | `layout.columnWidth` | Width of the right column images (default `44%`) |
 
 ## Preview locally
