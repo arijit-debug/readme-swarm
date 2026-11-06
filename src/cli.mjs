@@ -125,7 +125,9 @@ if (cfg.readme) {
   const link = (f, html) => (f.href || inert ? `<a href="${attr(f.href || inert)}">${html}</a>` : html);
   // The portrait and the column go on one source line: a newline between
   // inline images adds a full line of spacing on GitHub, enough to push the
-  // column below the portrait.
+  // column below the portrait. Each column block starts with <br> so that
+  // where floats are ignored (the GitHub mobile app) the blocks stack in
+  // order under the portrait instead of pairing up side by side.
   const lines = [];
   let row = '';
   for (const f of files) {
@@ -134,7 +136,7 @@ if (cfg.readme) {
       if (row) lines.push(row), (row = '');
       if (!lines.includes('<br clear="left" />')) lines.push('', '<br clear="left" />', '');
       lines.push(`<p align="center">${link(f, img(f, '100%'))}</p>`);
-    } else row += link(f, img(f, cfg.layout?.columnWidth || '42%'));
+    } else row += '<br>' + link(f, img(f, cfg.layout?.columnWidth || '42%'));
   }
   if (row) lines.push(row);
   if (!lines.includes('<br clear="left" />')) lines.push('', '<br clear="left" />');
